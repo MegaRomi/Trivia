@@ -1,6 +1,7 @@
 package com.example.trivia11a;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,7 +10,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -20,10 +26,13 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private String[] arrColor = { "Red", "Blue", "Pink", "Yellow"};
     private String chooseColor;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
 
         btnColorSetting = findViewById(R.id.btnColorSetting);
         btnColorSetting.setOnClickListener(this);
@@ -55,4 +64,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-}
+
+
+    }
+
+

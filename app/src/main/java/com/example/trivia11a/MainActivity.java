@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -25,15 +26,18 @@ public class MainActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> resultLauncher;
     private FbModule fbModule;
     private ConstraintLayout ll;
+    private Button btnInstruction;
+    private String strColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        fbModule = new FbModule(this);
         ll = findViewById(R.id.main);
 
-        fbModule = new FbModule(this);
+
+        //fbModule = new FbModule(this);
 
         resultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickStart(View view) {
         Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("color", strColor);
         startActivity(intent);
     }
 
@@ -64,11 +69,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickInstruction(View view) {
+        Intent intent = new Intent(this, instructions.class);
+        startActivity(intent);
     }
 
     public void setNewColorFromFb(String str) {
         // הפיירבייס קורא לפעולה בפעם הראשונה
         // ואחרי כל פעם שהמשתמש משנה את הצבע
+        strColor = str;
         Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
         setBackgroundColor(str);
     }
