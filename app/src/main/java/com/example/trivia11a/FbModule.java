@@ -15,8 +15,10 @@ import com.google.firebase.database.ValueEventListener;
 public class FbModule {
     private Context context;
 
+
     public FbModule(Context context) {
         this.context = context;
+
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("color");
@@ -25,7 +27,11 @@ public class FbModule {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String str = snapshot.getValue(String.class);
-                        ((MainActivity)context).setNewColorFromFb(str);
+                        if (str != null){
+                            ((MainActivity)context).setNewColorFromFb(str);
+
+
+                        }
                     }
 
                     @Override
