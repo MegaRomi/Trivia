@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".instructions">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instruction:"
+        android:gravity="center"
+        android:textDirection="ltr"
+        android:textSize="40sp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1)To start the game go back to Main Activity and press the Start Game button"
+        android:textDirection="ltr"
+        android:textSize="30dp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2) If you want to change the background color of the Main Activity and the Setting Activity, return to the Main Activity, press the Setting button, select a color by the spinner, and after choosing a color, press the Select button"
+        android:textDirection="ltr"
+        android:textSize="30dp"></TextView>
+
+</LinearLayout>
